@@ -1,0 +1,53 @@
+body{
+    margin: 0 auto;
+    background-image: url("./img/ATM3.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 720px;
+    
+}
+
+.conteiner{
+    width: 500px;
+    height: 450px;
+    text-align: center;
+    margin: 0 auto;
+    background-color: rgba(44, 62, 80, 0.7);
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-top: 160px;
+
+}
+.form_input{
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 3px 1px;
+    
+
+    
+    
+}
+.conteiner img{
+    width: 150px;
+    height: 150px;
+    margin-top: -60px;
+    margin: 30px;
+    text-align: center;
+}
+.btn_login{
+    color: #fff;
+    background-color: blue;
+    text-decoration: none;
+    width: 120px;
+    padding: 7px 3px;
+    border: 3px solid #234966;
+    border-radius: 5px;
+    text-align: center;
+}
+.input_dados{
+    padding: 5px 3px;
+    width: 250px;
+    font-size: 16px;
+    border-radius: 04px;
+}
+
+
+
