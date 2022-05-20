@@ -6,7 +6,7 @@ require_once 'db_connect.php';
 // Sessão
 session_start();
 
-if($_SESSION['count']>=3){
+/*if($_SESSION['count']>=3){
     $_SESSION['blocked']= "A sua conta foi bloqueada po 3 horas. volte a tentar mais tarde!";
     if(!isset($_SESSION['start'])){
         $inicio = new DateTime();
@@ -21,7 +21,7 @@ if($_SESSION['count']>=3){
             unset($_SESSION['end']);
         }
     }
-}
+}*/
 // botão enviar
 $erros = array();
 if(isset($_POST['btn-login']) && $_SESSION['count']<=3):

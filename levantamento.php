@@ -168,23 +168,24 @@ echo "O teu saldo é insuficiente";
 }*/
 
 $valor = $_POST['valorLeva'];
-$data = Getdate();
+
 
 if($valor>=100){
-  $sql = "INSERT INTO transacoes (TraData,idConta, TraDinheiro)
-     VALUES ('$data', '$id', '$valor')";
+  $sql = "INSERT INTO transacoes (idConta, TraDinheiro)
+     VALUES ($id, $valor)";
      if(mysqli_query($connect, $sql)){
         echo "inserido";
+        die();
      }else{
         echo "nao inserido";
      }
-    }
+}
 
      $sql= "select * FROM transacoes where idConta = $id";
      $resultado= mysqli_query($connect, $sql);
      $dados = mysqli_fetch_array($resultado);
      $TraDin =$dados['TraDinheiro'];
-     echo $TraDin;
+
      if($valor<100){
         echo "Só pode fazer levantamento a partir de 100";
      }

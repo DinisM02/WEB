@@ -191,7 +191,7 @@ if(isset($_POST['submit'])) {
             }else{
             echo "operation failed";
             }
-        }   
+        }    
 
             $sql= "select * FROM transacoes where idConta = $id";
             $resultado= mysqli_query($connect, $sql);

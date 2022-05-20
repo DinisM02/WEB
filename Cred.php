@@ -7,7 +7,7 @@ session_start();
 
 
 $id = $_SESSION['id_usuario'];
-$sql= "select * FROM transacoes";
+$sql= "select * FROM levantamento";
 $resultado= mysqli_query($connect, $sql);
 $dados = mysqli_fetch_array($resultado);
 $idConta = $dados['idConta'];
@@ -35,22 +35,23 @@ else{
 }*/
 
   $valor = $_POST['Valor'];
-  $data = Getdate();
+  $data =date('d-m-y h:i:s');;
 
 if($valor>=20){
-  @$sql = "INSERT INTO transacoes (TraData,idConta, TraDinheiro, Credelec)
+  @$sql = "INSERT INTO levantamento( valor_levantado, data_levantamento, idConta)
      VALUES ('$data', '$id', 'NULL','$valor')";
      if(mysqli_query($connect, $sql)){
         echo "";
+        die();
      }else{
         echo "operation failed";
      }
     }
 
-     $sql= "select * FROM transacoes where idConta = $id";
+     $sql= "select * FROM levantamento where idConta = $id";
      $resultado= mysqli_query($connect, $sql);
      $dados = mysqli_fetch_array($resultado);
-     $TraDin =$dados['Credelec'];
+     $TraDin =$dados['valor_levantado'];
      
 
 if($ContATM>= $TraDin){
